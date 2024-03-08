@@ -62,7 +62,10 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-setInterval(updeteCountdown, 1000);
+start.addEventListener('click', () => {
+  setInterval(updeteCountdown, 1000);
+  start.disabled = true;
+});
 
 function updeteCountdown() {
   const currentDate = new Date();
