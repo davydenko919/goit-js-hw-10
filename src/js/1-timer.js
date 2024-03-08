@@ -18,8 +18,8 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  // minDate: new Date(), 
-  
+  // minDate: new Date(),
+
   onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
     const currentDate = new Date();
@@ -57,7 +57,6 @@ function convertMs(ms) {
   const seconds = addLeadingZero(
     Math.floor((((ms % day) % hour) % minute) / second)
   );
-
 
   return { days, hours, minutes, seconds };
 }

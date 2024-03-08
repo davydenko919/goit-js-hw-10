@@ -5,8 +5,8 @@
   |============================
 */
 @import url('./reset.css');
-@import "flatpickr/dist/flatpickr.min.css";
-@import "izitoast/dist/css/iziToast.min.css";
+@import 'flatpickr/dist/flatpickr.min.css';
+@import 'izitoast/dist/css/iziToast.min.css';
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,4 +22,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+/* TASK 2 */
+.fieldset {
+  width: fit-content;
 }
