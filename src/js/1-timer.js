@@ -3,7 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const input = document.querySelector('.datetime-picker');
+const input = document.getElementById('datetime-picker');
 const start = document.querySelector('.strt-btn');
 const daysLeft = document.querySelector('[data-days]');
 const hoursLeft = document.querySelector('[data-hours]');
@@ -62,8 +62,9 @@ function convertMs(ms) {
 }
 
 start.addEventListener('click', () => {
-  setInterval(updeteCountdown, 1000);
   start.disabled = true;
+  input.disabled = true;
+  setInterval(updeteCountdown, 1000);
 });
 
 function updeteCountdown() {

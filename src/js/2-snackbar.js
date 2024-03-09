@@ -2,13 +2,14 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const input = document.querySelector('.input-ms');
-const subBtn = document.querySelector('.sub-btn');
-const stateTrue = document.querySelector('.state-true');
+const fulfilledStateRadio = document.querySelector('.state-true');
 const form = document.querySelector('.form');
 
-subBtn.addEventListener('click', () => {
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
   const delay = input.value;
-  const isSuccess = stateTrue.checked;
+  const isSuccess = fulfilledStateRadio.checked;
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -22,12 +23,12 @@ subBtn.addEventListener('click', () => {
 
   promise
     .then(delay => {
-      iziToast.show({
+      iziToast.success({
         message: `✅ Fulfilled promise in ${delay}ms`,
       });
     })
     .catch(delay => {
-      iziToast.show({
+      iziToast.error({
         message: `❌ Rejected promise in ${delay}ms`
       });
     });
